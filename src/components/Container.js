@@ -1,13 +1,12 @@
 import React from "react";
+import soup from "../images/cheddarSoup2.jpeg";
 
-import React from "react";
-
-function container() {
+function Container() {
   return (
     <div>
-      <img src="" />
+      <img src={soup} />
     </div>
   );
 }
 
-export default container;
+export default Container;
