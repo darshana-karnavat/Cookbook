@@ -1,17 +1,17 @@
-import { createClient } from "contentful";
+import { createClient } from 'contentful';
 
 const useContentful = () => {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE,
-    accessToken: process.env.CONTENTFUL_TOKEN,
-    host: "preview.contentful.com",
+    space: process.env.REACT_APP_CONTENTFUL_SPACE,
+    accessToken: process.env.REACT_APP_CONTENTFUL_TOKEN,
+    host: 'preview.contentful.com',
   });
 
   const getRecipes = async () => {
     try {
       const recipes = await client.getEntries({
-        content_type: "recipe",
-        select: "fields",
+        content_type: 'recipe',
+        select: 'fields',
       });
 
       const sanitizedRecipes = recipes.items.map((i) => {
@@ -21,7 +21,6 @@ const useContentful = () => {
         const description = i.fields.description;
         const dishImage = i.fields.dishImage.fields.file.url;
         return {
-          ...i.fields,
           title,
           shortDescription,
           ingredients,
