@@ -9,6 +9,7 @@ import { IconContext } from 'react-icons';
 import { Route, Routes, Link } from 'react-router-dom';
 import UseContentful from './useContentful';
 import Receipe from './Receipe';
+import NoMatch from './NoMatch';
 
 const App = () => {
   const { getTitles } = UseContentful();
@@ -37,6 +38,7 @@ const App = () => {
 
         <Route path="/soups" element={<SomeDish prop={allThrouseLocalStorage} />} />
         <Route path="/soups/:title" element={<Receipe recipe={allThrouseLocalStorage} />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
       <div>
         <div className="bg-warning bg-gradient rounded p-2" style={{ minHeight: 55 }}>

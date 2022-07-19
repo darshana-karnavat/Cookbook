@@ -44,8 +44,8 @@ const Receipe = () => {
           <div className="border rounded shadow m-2 p-4">
             <h3 className="text-center mb-3">Procedure</h3>
 
-            {recipe.procedure.map((el) => (
-              <p>{el}</p>
+            {recipe.procedure.map((el, index) => (
+              <p key={index}>{el}</p>
             ))}
           </div>
         </div>
